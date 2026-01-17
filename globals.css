@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Design System Tokens */
+:root {
+  /* Background Colors */
+  --color-bg-main: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-dark: #111827;
+  
+  /* Text Colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-light: #f9fafb;
+  
+  /* Accent Colors */
+  --color-accent: #ea580c;
+  --color-accent-hover: #c2410c;
+  
+  /* Border Colors */
+  --color-border: #f3f4f6;
+  --color-border-dark: #e5e7eb;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--color-bg-main);
+  --color-foreground: var(--color-text-primary);
+  
+  /* Fonts */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Base Styles */
+body {
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Typography Utilities */
+.heading-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.heading-section {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.2s ease-out;
+}
+
+/* Card hover lift effect */
+.card-hover {
+  transition: all 0.3s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Button hover lift */
+.btn-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.progress-animate {
+  animation: progressFill 1s ease-out forwards;
+}
